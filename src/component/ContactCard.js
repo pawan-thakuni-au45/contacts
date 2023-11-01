@@ -7,6 +7,7 @@ function ContactCard(props) {
     <div className='content'>
      <div className='header'>{name}</div>
      <div>{email}</div>
+     
      </div>
        <i className='trash alternate outline icon'
         style={{color:'red'}}
@@ -14,6 +15,7 @@ function ContactCard(props) {
        >
          
        </i>
+      
     
     </div>
   )

@@ -3,8 +3,10 @@ import './App.css';
 import Header from './component/Header';
 import AddContact from './component/AddContact';
 import ContactList from './component/ContactList';
+import {  BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { v4 as uuid } from "uuid";
+import { Outlet } from 'react-router-dom';
 
 function App() {
   const LOCAL_STORAGE_KEY='contacts'
@@ -33,11 +35,14 @@ console.log(contacts);
   },[contacts])
     return (
     <div className="ui container">
-    <Header/>
-        <AddContact AddContactHandler={AddContactHandler}/>
-        <ContactList contact={contacts} getContactId={removeContactHandler}/>
+<Header/>
+<AddContact AddContactHandler={ AddContactHandler} />
+<ContactList contacts={contacts} getContactId={removeContactHandler}/>
     </div>
   );
 }
 
 export default App;
+
+// contacts={contacts} getContactId={removeContactHandler
+//   AddContactHandler={ AddContactHandler}
